@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator-box">
+            <h1>Calculator</h1>
+            
+            <form action="/math" method="POST" class="calculator-form">
+                <div class="form-group">
+                    <label for="operation">Choose a Mathematical Operation</label>
+                    <select name="operation" id="operation" required>
+                        <option value="add">add</option>
+                        <option value="subtraction">subtraction</option>
+                        <option value="multiply">multiply</option>
+                        <option value="divide">divide</option>
+                    </select>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="number" name="num1" placeholder="Enter first number" step="any" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="number" name="num2" placeholder="Enter second number" step="any" required>
+                    </div>
+                </div>
+                
+                <button type="submit" class="calculate-btn">Calculate</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
